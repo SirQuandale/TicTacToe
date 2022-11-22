@@ -1,0 +1,109 @@
+.wrapper {
+    margin: auto;
+    width: 480px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 150px);
+    gap: 10px;
+}
+
+.box1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 1;
+}
+
+.box2 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+.box3 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+.box4 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.box5 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.box6 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+.box7 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.box8 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.box9 {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 3;
+}
+
+.E {
+    background-color: darkgrey;
+    border: 1px solid black;
+}
+
+button {
+    background-color: darkgray;
+    width: 150px;
+    height: 150px;
+}
+
+button:hover {
+    background-color: grey;
+}
+
+button:active {
+    background-color: darkgray;
+}
+
+.boxes {
+    width: 150px;
+    height: 150px;
+    background-color: darkgrey;
+    border: 1px solid black;
+}
+
+.boxes:hover {
+    background-color: grey;
+}
+
+.boxes:active {
+    background-color: darkgray;
+}
+
+.won {
+    background-color: green;
+}
