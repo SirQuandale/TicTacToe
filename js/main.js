@@ -11,6 +11,7 @@ let totalWInsO = 0;
 let totalDraws = 0;
 let didWin = false;
 
+
 boxes.forEach((box, index) => {
     box.addEventListener('click', (data) => { //EventListener collects the data of the clicked box
         place = gridBoard[Math.floor(index / 3)][index % 3]; //places the x or o on the array board
