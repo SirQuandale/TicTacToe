@@ -1,4 +1,4 @@
-.wrapper {
+.boxes-wrapper {
     margin: auto;
     width: 480px;
     display: grid;
@@ -96,7 +96,7 @@ button:active {
     border: 1px solid black;
 }
 
-.boxes:hover {
+.boxes-hover:hover {
     background-color: grey;
 }
 
