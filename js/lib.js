@@ -1,6 +1,6 @@
 function checkWinner() {
     for (let i = 0; i < 3; i++) {
-        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] != null) { //checks if one of these rows is filled. the [0] or [1] = rows
+        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] != null) { //checks if one of these horizontal rows is filled. the [0] or [1] = rows
             didWin = true; //enables win
             let row = document.querySelectorAll(`.row${i + 1}`); //checks all the three rows
             row.forEach(column => { //for one of the winning rows, the background changes color to green.
@@ -9,7 +9,7 @@ function checkWinner() {
             })
             addPoints(); //adds points to player or enemy. could also be a draw
             return gridBoard[i][0];
-        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] != null) { //the same is repeated here, except the indexes are turned around to recognize horizontal rows
+        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] != null) { //the same is repeated here, except the indexes are turned around to recognize vertical rows
             didWin = true;
             let column = document.querySelectorAll(`.column${i + 1}`) //column instead of row
             column.forEach(columnrow => {
@@ -40,28 +40,28 @@ function checkWinner() {
 
 function addPoints() {
     for (let i = 0; i < 3; i++) {
-        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'X') {
+        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'X') { //checks if any horizontal row is completly is X
             totalWinsX = totalWinsX + 1;
             console.log(totalWinsX + 'X');
-        } else if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'O') {
+        } else if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'O') { //checks if any horizontal row is completly is O
             totalWInsO = totalWInsO + 1;
             console.log(totalWInsO + 'O');
-        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'X') {
+        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'X') { //checks if any vertical row is completly is X
             totalWinsX = totalWinsX + 1;
             console.log(totalWinsX + 'X');
-        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'O') {
+        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'O') { //checks if any vertical row is completly is O
             totalWInsO = totalWInsO + 1;
             console.log(totalWInsO + 'O');
-        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') {
+        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') { //checks if diagnol left is X
             totalWinsX = totalWinsX + 1;
             console.log(totalWinsX + 'X');
-        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') {
+        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') { //checks if diagnol left is O
             totalWInsO = totalWInsO + 1;
             console.log(totalWInsO + 'O');
-        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') {
+        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') { //checks if diagnol right is X
             totalWinsX = totalWinsX + 1;
             console.log(totalWinsX + 'X');
-        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') {
+        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') { //checks if diagnol right is O
             totalWInsO = totalWInsO + 1;
             console.log(totalWInsO + 'O');
         }
