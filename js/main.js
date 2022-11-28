@@ -8,9 +8,9 @@ const boxes = document.querySelectorAll('.img-btn');
 const resetButton = document.querySelector('.reset');
 let playerTurn = 'X';
 let totalWinsX = 0
-totalWinsX = parseFloat(window.localStorage.getItem('totalXwins'));
+totalWinsX = parseInt(window.localStorage.getItem('totalXwins'));
 let totalWInsO = 0;
-totalWInsO = parseFloat(window.localStorage.getItem('totalOwins'));
+totalWInsO = parseInt(window.localStorage.getItem('totalOwins'));
 let totalDraws = 0;
 let didWin = false;
 let dataL;
