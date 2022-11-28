@@ -5,12 +5,19 @@ let gridBoard = [
 ]
 
 const boxes = document.querySelectorAll('.img-btn');
+const resetButton = document.querySelector('.reset');
 let playerTurn = 'X';
-let totalWinsX = 0;
+let totalWinsX = 0
+totalWinsX = parseFloat(window.localStorage.getItem('totalXwins'));
 let totalWInsO = 0;
+totalWInsO = parseFloat(window.localStorage.getItem('totalOwins'));
 let totalDraws = 0;
 let didWin = false;
+let dataL;
 
+resetButton.addEventListener('click', eventReset);
+document.querySelector('.player-x-score').textContent = totalWinsX;
+document.querySelector('.player-o-score').textContent = totalWInsO;
 
 boxes.forEach((box, index) => {
     box.addEventListener('click', (data) => { //EventListener collects the data of the clicked box
@@ -30,6 +37,8 @@ boxes.forEach((box, index) => {
                 }
             }
             checkWinner();
+            dataL = data.target.attributes[0].nodeValue;
+            console.log(data.target.attributes[0].nodeValue);
         }
     })
 });

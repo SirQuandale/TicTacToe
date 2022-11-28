@@ -62,4 +62,10 @@ function addPoints() {
     }
     document.querySelector('.player-x-score').textContent = totalWinsX;
     document.querySelector('.player-o-score').textContent = totalWInsO;
+    window.localStorage.setItem('totalXwins', totalWinsX);
+    window.localStorage.setItem('totalOwins', totalWInsO);
+}
+
+function eventReset() {
+    window.location.reload();
 }
