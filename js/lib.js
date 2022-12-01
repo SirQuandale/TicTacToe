@@ -50,15 +50,20 @@ function addPoints() {
             totalWinsX = totalWinsX + 1;
         } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'O') { //checks if any vertical row is completly is O
             totalWInsO = totalWInsO + 1;
-        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') { //checks if diagnol left is X
-            totalWinsX = totalWinsX + 1 / 3;
-        } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') { //checks if diagnol left is O
-            totalWInsO = totalWInsO + 1 / 3;
-        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') { //checks if diagnol right is X
-            totalWinsX = totalWinsX + 1 / 3;
-        } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') { //checks if diagnol right is O
-            totalWInsO = totalWInsO + 1 / 3;
         }
+    }
+    if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') { //checks if diagnol left is X
+        totalWinsX = totalWinsX + 1;
+        console.log('1');
+    } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') { //checks if diagnol left is O
+        totalWInsO = totalWInsO + 1;
+        console.log('2');
+    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') { //checks if diagnol right is X
+        totalWinsX = totalWinsX + 1;
+        console.log('3');
+    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') { //checks if diagnol right is O
+        totalWInsO = totalWInsO + 1;
+        console.log('4');
     }
     document.querySelector('.player-x-score').textContent = totalWinsX;
     document.querySelector('.player-o-score').textContent = totalWInsO;
@@ -67,5 +72,10 @@ function addPoints() {
 }
 
 function eventReset() {
+    window.location.reload();
+}
+
+function eventClearScore() {
+    window.localStorage.clear();
     window.location.reload();
 }
