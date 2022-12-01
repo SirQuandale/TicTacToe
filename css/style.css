@@ -1,10 +1,17 @@
+body {
+    background-image: url('/img/black-texture.jpg');
+    background-size: 100%;
+}
+
 .boxes-wrapper {
     margin: auto;
+    margin-top: 70px;
     width: 480px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 150px);
-    gap: 10px;
+    gap: 5px;
+    row-gap: 15px;
     /* grid-template-areas: 
     "1 2 3"
     "4 5 6"
@@ -87,9 +94,10 @@
 .boxes {
     width: 150px;
     height: 150px;
-    background-color: darkgrey;
-    border: 1px solid black;
+    /* background-color: darkgrey; */
+    border: 3.5px solid white;
     border-radius: 10px;
+    box-shadow: inset 0px 0px 25px 5px #000000;
 }
 
 .boxes-hover:hover {
@@ -100,16 +108,28 @@
     background-color: darkgray;
 }
 
+p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14pt;
+}
+
 .won {
     background-color: green;
 }
 
 .footer {
     margin: auto;
-    margin-top: 20px;
+    margin-top: 20px; 
     width: 480px;
     height: 250px;
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 10px;
     text-align: center;
+    box-shadow: inset 0px 0px 25px 5px #000000;
 }

@@ -1,3 +1,12 @@
+function reloadData() {
+    totalWinsX = parseInt(window.localStorage.getItem('totalXwins'));
+}
+
+if(window.localStorage.length != 0) {
+    reloadData();
+    alert(true);
+}
+
 function checkWinner() {
     for (let i = 0; i < 3; i++) {
         if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] != null) { //checks if one of these horizontal rows is filled. the [0] or [1] = rows
@@ -40,39 +49,57 @@ function checkWinner() {
     }
 }
 
-function addPoints() {
-    for (let i = 0; i < 3; i++) {
-        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'X') { //checks if any horizontal row is completly is X
-            totalWinsX = totalWinsX + 1;
-        } else if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'O') { //checks if any horizontal row is completly is O
-            totalWInsO = totalWInsO + 1;
-        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'X') { //checks if any vertical row is completly is X
-            totalWinsX = totalWinsX + 1;
-        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'O') { //checks if any vertical row is completly is O
-            totalWInsO = totalWInsO + 1;
-        }
-    }
-    if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') { //checks if diagnol left is X
-        totalWinsX = totalWinsX + 1;
-        console.log('1');
-    } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') { //checks if diagnol left is O
-        totalWInsO = totalWInsO + 1;
-        console.log('2');
-    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') { //checks if diagnol right is X
-        totalWinsX = totalWinsX + 1;
-        console.log('3');
-    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') { //checks if diagnol right is O
-        totalWInsO = totalWInsO + 1;
-        console.log('4');
-    }
+function updateLocalStorage() {
     document.querySelector('.player-x-score').textContent = totalWinsX;
     document.querySelector('.player-o-score').textContent = totalWInsO;
     window.localStorage.setItem('totalXwins', totalWinsX);
     window.localStorage.setItem('totalOwins', totalWInsO);
+    console.log(totalWinsX);
+    console.log(window.localStorage.getItem('totalXwins'));
+}
+
+function addPoints() {
+    for (let i = 0; i < 3; i++) {
+        if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'X') { //checks if any horizontal row is completly is X
+            totalWinsX += 1;
+            updateLocalStorage();
+        } else if (gridBoard[i][0] == gridBoard[i][1] && gridBoard[i][1] == gridBoard[i][2] && gridBoard[i][2] == 'O') { //checks if any horizontal row is completly is O
+            totalWInsO += 1;
+            updateLocalStorage();
+        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'X') { //checks if any vertical row is completly is X
+            totalWinsX += 1;
+            updateLocalStorage();
+        } else if (gridBoard[0][i] == gridBoard[1][i] && gridBoard[1][i] == gridBoard[2][i] && gridBoard[2][i] == 'O') { //checks if any vertical row is completly is O
+            totalWInsO += 1;
+            updateLocalStorage();
+        }
+    }
+    if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'X') { //checks if diagnol left is X
+        totalWinsX += 1;
+        updateLocalStorage();
+    } else if (gridBoard[0][0] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][2] && gridBoard[2][2] == 'O') { //checks if diagnol left is O
+        totalWInsO += 1;
+        updateLocalStorage();
+    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'X') { //checks if diagnol right is X
+        totalWinsX += 1;
+        updateLocalStorage();
+    } else if (gridBoard[0][2] == gridBoard[1][1] && gridBoard[1][1] == gridBoard[2][0] && gridBoard[2][0] == 'O') { //checks if diagnol right is O
+        totalWInsO += 1;
+        updateLocalStorage();
+    }
 }
 
 function eventReset() {
-    window.location.reload();
+    for(let i = 0; i < boxes.length; i++)
+    {
+        boxes[i].attributes[0].nodeValue = 'img/blank.png';
+        didWin = false;
+        gridBoard = [
+            [null, null, null],
+            [null, null, null],
+            [null, null, null]
+        ]
+    }
 }
 
 function eventClearScore() {

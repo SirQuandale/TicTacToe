@@ -8,8 +8,8 @@ const boxes = document.querySelectorAll('.img-btn');
 const resetButton = document.querySelector('.reset');
 const scoreReset = document.querySelector('.clear');
 let playerTurn = 'X';
-let totalWinsX = parseInt(window.localStorage.getItem('totalXwins'));
-let totalWInsO = parseInt(window.localStorage.getItem('totalOwins'));
+let totalWinsX = 0;
+let totalWInsO = 0;
 let totalDraws = 0;
 let didWin = false;
 let dataL;
@@ -19,13 +19,13 @@ scoreReset.addEventListener('click', eventClearScore);
 document.querySelector('.player-x-score').textContent = totalWinsX;
 document.querySelector('.player-o-score').textContent = totalWInsO;
 
-if (window.localStorage.getItem('totalXwins') === null) {
-    totalWinsX = 0;
-}
+// if (parseInt(window.localStorage.getItem('totalXwins')) > 0) {
+//     document.querySelector('.player-x-score').textContent = parseInt(window.localStorage.getItem('totalXwins'));
+// }
 
-if (window.localStorage.getItem('totalOwins') === null) {
-    totalWInsO = 0;
-}
+// if (parseInt(window.localStorage.getItem('totalOwins')) > 0) {
+//     document.querySelector('.player-o-score').textContent = parseInt(window.localStorage.getItem('totalOwins'));
+// }
 
 boxes.forEach((box, index) => {
     box.addEventListener('click', (data) => { //EventListener collects the data of the clicked box
