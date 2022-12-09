@@ -133,3 +133,14 @@ h3 {
     text-align: center;
     box-shadow: inset 0px 0px 25px 5px #000000;
 }
+
+.login-screen {
+    background-color: white;
+    width: 700px;
+    height: 800px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}

@@ -106,3 +106,11 @@ function eventClearScore() {
     window.localStorage.clear();
     window.location.reload();
 }
+
+function validateForm() {
+    let x = document.forms["myForm"]["fname"].value;
+    if (x == "") {
+      alert("Name must be filled out");
+      return false;
+    }
+}
