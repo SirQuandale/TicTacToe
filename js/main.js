@@ -19,13 +19,15 @@ scoreReset.addEventListener('click', eventClearScore);
 document.querySelector('.player-x-score').textContent = totalWinsX;
 document.querySelector('.player-o-score').textContent = totalWInsO;
 
-// if (parseInt(window.localStorage.getItem('totalXwins')) > 0) {
-//     document.querySelector('.player-x-score').textContent = parseInt(window.localStorage.getItem('totalXwins'));
-// }
+if (window.localStorage.getItem('totalXwins') != null ) {
+    totalWinsX = parseInt(window.localStorage.getItem('totalXwins'))
+    document.querySelector('.player-x-score').textContent = totalWinsX;
+}
 
-// if (parseInt(window.localStorage.getItem('totalOwins')) > 0) {
-//     document.querySelector('.player-o-score').textContent = parseInt(window.localStorage.getItem('totalOwins'));
-// }
+if (window.localStorage.getItem('totalOwins') != null) {
+    totalWInsO = parseInt(window.localStorage.getItem('totalOwins'));
+    document.querySelector('.player-o-score').textContent = totalWInsO;
+}
 
 boxes.forEach((box, index) => {
     box.addEventListener('click', (data) => { //EventListener collects the data of the clicked box
