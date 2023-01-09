@@ -37,7 +37,8 @@ boxes.forEach((box, index) => {
                 if (data.target.attributes[0].nodeValue != 'img/o.png') { //checks if the box isnt filled with O
                     data.target.attributes[0].nodeValue = 'img/x.png'; //replaces the blank box with X
                     place = gridBoard[Math.floor(index / 3)][index % 3] = playerTurn; //places the X in the array board
-                    playerTurn = 'O'; //player turn changes
+                    // playerTurn = 'O'; //player turn changes
+                    aiplaceTile()
                 }
             } else if (playerTurn === 'O') {
                 if (data.target.attributes[0].nodeValue != 'img/x.png') {
