@@ -187,11 +187,23 @@ function validateForm() {
 }
 
 function aiplaceTile() {
-    if (gridBoard[1][1] != 'X') {
+    if (gridBoard[1][1] == 'X') {
+        boxes[7].attributes[0].nodeValue = 'img/o.png';
+        gridBoard[2][1] = 'O';
+    } else if (gridBoard[1][1] == null) {
         boxes[4].attributes[0].nodeValue = 'img/o.png';
         gridBoard[1][1] = 'O';
-        console.log(gridBoard);
-    } else if (gridBoard[0][2] != 'X') {
-        
+    } else if (gridBoard[0][2] == null) {
+        boxes[2].attributes[0].nodeValue = 'img/o.png';
+        gridBoard[0][2] = 'O';
+    } else if (gridBoard[2][0] == null) {
+        boxes[6].attributes[0].nodeValue = 'img/o.png';
+        gridBoard[2][0] = 'O';
+    } else if (gridBoard[0][1] == null) {
+        boxes[1].attributes[0].nodeValue = 'img/o.png';
+        gridBoard[0][1] = 'O';
+    } else if (gridBoard[2][1] == null) {
+        boxes[7].attributes[0].nodeValue = 'img/o.png';
+        gridBoard[2][1] = 'O';
     }
 }
