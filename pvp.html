@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="boxes-wrapper">
+        <div class="box1">
+            <div class="boxes row1 column1 diag1 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross1" draggable="false">
+            </div>
+        </div>
+        <div class="box2">
+            <div class="boxes row1 column2 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross2" draggable="false">
+            </div>
+        </div>
+        <div class="box3">
+            <div class="boxes row1 column3 diag2 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross3" draggable="false">
+            </div>
+        </div>
+        <div class="box4">
+            <div class="boxes row2 column1 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross4" draggable="false">
+            </div>
+        </div>
+        <div class="box5">
+            <div class="boxes row2 column2 diag1 diag2 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross5" draggable="false">
+            </div>
+        </div>
+        <div class="box6">
+            <div class="boxes row2 column3 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross6" draggable="false">
+            </div>
+        </div>
+        <div class="box7">
+            <div class="boxes row3 column1 diag2 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross7" draggable="false">
+            </div>
+        </div>
+        <div class="box8">
+            <div class="boxes row3 column2 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross8" draggable="false">
+            </div>
+        </div>
+        <div class="box9">
+            <div class="boxes row3 column3 diag1 boxes-hover">
+                <img src="img/blank.png" alt="imgContainer" class="img-btn cross9" draggable="false">
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <h3>Tic Tac Toe Scores</h3>
+        <hr>
+        <p>Player X:</p>
+        <p class="player-x-score">0</p>
+        <p>Player O:</p>
+        <p class="player-o-score">0</p>
+        <button class="reset">Restart</button>
+        <button class="clear">Clear Score</button>
+    </footer>
+    <script src="js/lib.js"></script>
+    <script src="js/pvp.js"></script>
+</body>
+
+</html>
