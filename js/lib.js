@@ -132,6 +132,7 @@ function eventReset() {
 function eventClearScore() {
     window.localStorage.clear();
     window.location.reload();
+    window.location.href = 'index.html';
 }
 
 function validateForm() {

@@ -135,12 +135,17 @@ h3 {
 }
 
 .login-screen {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
     width: 700px;
     height: 800px;
     margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 10px;
     z-index: 10;
 }
