@@ -1,3 +1,6 @@
+let x = "";
+let y = "";
+
 function reloadData() {
     totalWinsX = parseInt(window.localStorage.getItem('totalXwins'));
 }
@@ -132,8 +135,10 @@ function eventClearScore() {
 }
 
 function validateForm() {
-    let x = document.forms["myForm"]["fname"].value;
-    let y = document.forms['MyForm']["fname2"].value;
+    x = document.querySelector('.fname').value;
+    y =  document.querySelector('.fname-two').value;
+    localStorage.setItem("playerOne", x);
+    localStorage.setItem("playerTwo", y);
     console.log(x);
     console.log(y);
     if (x == "") {
@@ -143,7 +148,13 @@ function validateForm() {
         alert("Name must be filled out");
         return false;
     }
+    else{
+        window.location.href = 'pvp.html';
+        return true;
+    }
 }
+
+
 
 function aiplaceTile() {
     if (gridBoard[1][1] == 'X') {

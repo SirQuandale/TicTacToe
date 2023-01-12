@@ -18,6 +18,7 @@ resetButton.addEventListener('click', eventReset);
 scoreReset.addEventListener('click', eventClearScore);
 document.querySelector('.player-x-score').textContent = totalWinsX;
 document.querySelector('.player-o-score').textContent = totalWInsO;
+document.querySelector('playerOneName').textContent = localStorage.getItem('playerOne');
 
 if (window.localStorage.getItem('totalXwins') != null ) {
     totalWinsX = parseInt(window.localStorage.getItem('totalXwins'))
